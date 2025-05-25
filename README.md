@@ -20,16 +20,14 @@
 ### 構成要素
 
 - **Webアプリケーション（my-gql-proxy）**
-  - Node.js 等で実装されたサーバー
-  - フロントエンド（例: React, Next.js など）
+  - Next.js 等で実装されたサーバー
 
 - **データベース**
-  - Cloud SQL（MySQL/PostgreSQL） または Firestore  
+  - Cloud SQL（MySQL）
     （ユーザー情報・GraphQLサーバー情報・リクエスト/レスポンス履歴等を保存）
 
 - **認証**
-  - Firebase Authentication（GitHubプロバイダー）
-  - またはアプリ側でGitHub OAuth連携
+  - アプリ側でGitHub OAuth連携
 
 - **シークレット管理**
   - Secret Manager（OAuthクライアントID/シークレット等の管理）
@@ -40,7 +38,7 @@
 graph TD
   U[ユーザー] --> CR["Cloud Run<br/>(my-gql-proxy)"]
   CR --> GH[GitHub]
-  CR --> DB["Cloud SQL<br/>または Firestore"]
+  CR --> DB["Cloud SQL"]
   CR --> SM["Secret Manager"]
   CR --> GQL["任意のGraphQLサーバー"]
 ```
