@@ -38,11 +38,11 @@
 
 ```mermaid
 graph TD
-  User[ユーザー] -- HTTPS --> CloudRun[Cloud Run (my-gql-proxy)]
-  CloudRun -- 認証/OAuth --> GitHub
-  CloudRun -- データ保存・取得 --> DB[(Cloud SQL<br/>または Firestore)]
-  CloudRun -- シークレット参照 --> SecretManager[Secret Manager]
-  CloudRun -- APIリクエスト --> GraphQLAPI[任意のGraphQLサーバー]
+  U[ユーザー] --> CR["Cloud Run<br/>(my-gql-proxy)"]
+  CR --> GH[GitHub]
+  CR --> DB["Cloud SQL<br/>または Firestore"]
+  CR --> SM["Secret Manager"]
+  CR --> GQL["任意のGraphQLサーバー"]
 ```
 
 ### 主な処理フロー
