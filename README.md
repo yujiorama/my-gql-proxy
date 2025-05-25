@@ -58,3 +58,12 @@ graph TD
 - Cloud Runの環境変数やSecret Managerで認証情報などを安全に管理
 - 必要に応じて、VPCやIAM権限を設定しセキュリティを担保
 
+## GitHub Copilot の提案
+
+TBD
+
+## Gemini の提案
+
+> このリポジトリのreadmeに書いてある機能を実装して、変更PRを作成して欲しい。
+> 
+https://g.co/gemini/share/f00307ea52b7
