@@ -34,7 +34,48 @@ SPA
 
 ## GitHub Copilot の提案
 
-TBD
+- **要件整理**:
+  - 機能一覧、画面一覧、主な処理フローを基に、必要な機能と画面を具体化。
+  - 必要なAPIエンドポイントとデータ構造を設計。
+
+- **技術スタック選定**:
+  - フロントエンド: React + Vite + TypeScript。
+  - バックエンド: Node.js + Express + TypeScript。
+  - 認証: GitHub OAuth。
+  - データベース: SQLite（簡易な履歴保存用）。
+  - 状態管理: React Query（API通信とキャッシュ管理）。
+
+- **フロントエンド設計**:
+  - ページ構成: ログインページ、マイページ。
+  - コンポーネント設計: ログインボタン、GraphQLサーバー管理フォーム、リクエスト入力フォーム、レスポンス表示エリア、履歴一覧。
+
+- **バックエンド設計**:
+  - APIエンドポイント:
+    - `/auth/github`（GitHub認証開始）
+    - `/auth/github/callback`（GitHub認証コールバック）
+    - `/api/graphql`（GraphQLリクエストプロキシ）
+    - `/api/history`（リクエスト/レスポンス履歴管理）
+  - セッション管理: CookieベースまたはJWT。
+
+- **データベース設計**:
+  - テーブル: `users`（ユーザー情報）、`graphql_servers`（登録サーバー）、`request_history`（リクエスト履歴）。
+
+- **実装フロー**:
+  1. GitHub OAuth認証の実装。
+  2. フロントエンドの画面とコンポーネント作成。
+  3. バックエンドAPIの実装。
+  4. フロントエンドとバックエンドの統合。
+  5. 履歴保存と表示機能の実装。
+  6. テストとデバッグ。
+
+- **デプロイ**:
+  - フロントエンド: VercelまたはNetlify。
+  - バックエンド: RenderまたはHeroku。
+  - 環境変数でGitHub OAuthクライアント情報を管理。
+
+- **テスト**:
+  - ユニットテスト: Jest。
+  - E2Eテスト: Playwright。TBD
 
 ## Gemini の提案
 
